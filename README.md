@@ -90,3 +90,8 @@
 
 </body>
 </html>
+<img src="logo.png" class="small-icon" alt="Buff Icon">
+
+<div class="buffalo-container" onclick="popBuffalo()">
+    <img src="logo.png" id="buffImg" class="buffalo-img" alt="Buffalo Mascot">
+</div>
