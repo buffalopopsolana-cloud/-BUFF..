@@ -89,5 +89,12 @@
     </script>
 
 </body>![5s17di](https://github.com/user-attachments/assets/58842d0c-8663-4d37-b5f5-479b95a23b1c)
+![5s17di](https://github.com/user-attachments/assets/672be394-0930-4590-b6c4-09e565c4769e)
 
 </html>
+<img src="logo.png" class="small-icon" alt="Buff Icon">
+
+<div class="buffalo-container" onclick="popBuffalo()">
+    <img src="logo.png" id="buffImg" class="buffalo-img" alt="Buffalo Mascot">
+</div>
+
