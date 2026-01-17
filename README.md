@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YOUR COIN NAME ($TICKER)</title>
-    <style>
+    <buffalopopsolana> ($BUFF) <memecoin>
+    <🦬>
         body { font-family: 'Comic Sans MS', sans-serif; background: #1a1a1a; color: white; text-align: center; }
         .container { max-width: 800px; margin: auto; padding: 20px; }
         .hero { background: linear-gradient(45deg, #ff00ff, #00ffff); padding: 50px; border-radius: 20px; margin-top: 20px; }
@@ -16,9 +16,9 @@
 <body>
     <div class="container">
         <div class="hero">
-            <img src="logo.png" alt="Meme Logo"> <h1>$YOURTICKER TO THE MOON! 🚀</h1>
+            <img src="logo.png" alt="Meme Logo"> <h1>$BUFF! 🚀</h1>
             <p>The most degenerate coin on [Chain Name]. No taxes, no utility, just vibes.</p>
-            <a href="TELEGRAM_LINK" class="btn">Join Telegram</a>
+            <a href="telegram loading" class="btn">Join Telegram</a>
             <a href="#" class="btn" style="background: #00ff00;">Buy on Raydium/Uniswap</a>
         </div>
 
