@@ -16,22 +16,19 @@
 <body>
     <div class="container">
         <div class="hero">
-            <img src="logo.png" alt="Meme Logo"> <h1>$BUFF! 🚀</h1>
+            <img src="logo.png" alt="🦬"> <h1>$BUFF! 🚀</h1>
             <p>The most degenerate coin on [Chain Name]. No taxes, no utility, just vibes.</p>
             <a href="telegram loading" class="btn">Join Telegram</a>
             <a href="#" class="btn" style="background: #00ff00;">Buy on Raydium/Uniswap</a>
         </div>
-
         <h2>Tokenomics</h2>
         <div class="tokenomics">
             <div><h3>1B</h3><p>Supply</p></div>
             <div><h3>0%</h3><p>Tax</p></div>
             <div><h3>100%</h3><p>LP Burned</p></div>
         </div>
-
         <h2>Contract Address</h2>
         <p style="background: #000; padding: 10px; border: 1px dashed #555;">COMING SOON</p>
-
         <h2>How to Buy</h2>
         <ol style="text-align: left; display: inline-block;">
             <li>Create a wallet (Phantom/Metamask).</li>
