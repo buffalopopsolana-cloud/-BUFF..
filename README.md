@@ -15,7 +15,7 @@
 
         /* Main Content */
         .content { margin-top: 140px; padding: 20px; }
-        .small-icon { width: 80px; height: 80px; border-radius: 50%; border: 3px solid white; margin-bottom: 10px; object-fit: cover; }
+        .small-icon { width: 80px; height: 80px; border-radius: 50%; border: 2px solid white; margin-bottom: 10px; }
 
         /* Social Icons */
         .social-row { display: flex; justify-content: center; align-items: center; gap: 15px; margin-top: 15px; }
@@ -27,8 +27,8 @@
 
         /* The Buffalo - Clickable Area */
         .buffalo-container { position: relative; cursor: pointer; user-select: none; -webkit-tap-highlight-color: transparent; padding: 20px 0; }
-        .buffalo-img { width: 80%; max-width: 350px; transition: transform 0.05s; border-radius: 50%; border: 8px solid white; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
-        .buffalo-img:active { transform: scale(0.92); }
+        .buffalo-img { width: 80%; max-width: 350px; transition: transform 0.05s; border-radius: 50%; border: 10px solid white; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+        .buffalo-img:active { transform: scale(0.95); }
 
         /* Bottom Status Bar */
         .status-bar { background: rgba(255,255,255,0.2); backdrop-filter: blur(5px); padding: 15px; width: 85%; max-width: 400px; margin: 20px auto; border-radius: 20px; display: flex; justify-content: space-between; align-items: center; font-size: 1.1rem; }
@@ -42,7 +42,7 @@
     </div>
 
     <div class="content">
-        <img src="https://github.com/user-attachments/assets/672be394-0930-4590-b6c4-09e565c4769e" class="small-icon" alt="Buff Icon">
+        <img src="https://lh3.googleusercontent.com/d/1O9E3oR70V_2S6pY0F1N_tXzQpB6K5X8S" class="small-icon" alt="Buff Icon">
         
         <div class="social-row">
             <a href="https://t.me/YOUR_TELEGRAM" class="about-btn">ABOUT $BUFF</a>
@@ -55,7 +55,7 @@
         <div class="pop-count" id="count">0</div>
 
         <div class="buffalo-container" onclick="popBuffalo()">
-            <img src="https://github.com/user-attachments/assets/672be394-0930-4590-b6c4-09e565c4769e" id="buffImg" class="buffalo-img" alt="Buffalo Mascot">
+            <img src="https://lh3.googleusercontent.com/d/1O9E3oR70V_2S6pY0F1N_tXzQpB6K5X8S" id="buffImg" class="buffalo-img" alt="Buffalo Mascot">
         </div>
 
         <div class="status-bar">
@@ -75,18 +75,19 @@
             document.getElementById('count').innerText = clicks;
             document.getElementById('totalPops').innerText = total.toLocaleString();
 
-            // Click Animation
+            // Click Animation Effect
             const img = document.getElementById('buffImg');
-            img.style.transform = "scale(1.1)";
+            img.style.transform = "scale(1.08)";
             setTimeout(() => { img.style.transform = "scale(1)"; }, 50);
         }
 
         function copyCA() {
             const ca = document.getElementById('caValue').innerText;
             navigator.clipboard.writeText(ca);
-            alert("CA Copied! Time to buy $BUFF! 🐃🚀");
+            alert("Contract Address Copied! 🐃🚀");
         }
     </script>
 
 </body>
 </html>
+![1z2to7](https://github.com/user-attachments/assets/62378c4a-7507-4b36-8aae-c844375bce95)
