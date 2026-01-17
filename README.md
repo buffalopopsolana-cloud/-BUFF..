@@ -1,48 +1,92 @@
-# 🦬 buffalopopsolana 
+<!DOCTYPE html>
+<html lang="en">
+<🦬>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$BUFF - POPBUFFALO</title>
+    <style>
+        :root { --bg-color: #5d9e52; --text-color: #ffffff; --header-bg: #000000; }
+        body { margin: 0; padding: 0; background-color: var(--bg-color); font-family: 'Arial Black', sans-serif; text-align: center; color: var(--text-color); overflow-x: hidden; }
 
-This is an open-source **buffalopopsolana ** built with **Next.js**. It's designed to help crypto projects launch their website quickly with a clean, modern, and fun design.
+        /* Top CA Bar - Sticky Header */
+        .ca-header { background: var(--header-bg); padding: 15px; border-radius: 0 0 40px 40px; width: 90%; margin: 0 auto; position: fixed; top: 0; left: 0; right: 0; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+        .ca-label { font-size: 0.7rem; color: #888; margin-bottom: 5px; }
+        .ca-value { font-size: 0.8rem; word-break: break-all; color: #fff; font-family: monospace; }
 
-![buffalopopsolana Real](public/screencapture.png)  
+        /* Main Content */
+        .content { margin-top: 120px; padding: 20px; }
+        .small-icon { width: 60px; margin-bottom: 10px; }
 
-## 🚀 Features
+        /* Social Icons */
+        .social-row { display: flex; justify-content: center; align-items: center; gap: 15px; margin-top: 15px; }
+        .social-icon { width: 35px; height: 35px; cursor: pointer; }
+        .about-btn { background: rgba(255,255,255,0.3); padding: 12px 30px; border-radius: 30px; border: 2px solid white; color: white; text-decoration: none; font-weight: bold; }
 
-- **Fast & SEO-friendly** with Next.js
-- **Responsive Design** for all devices
-- **Customizable** sections for team, roadmap, tokenomics, and more
-- **Easy Deployment** with Vercel or any hosting platform
-- **Lightweight & Performant** for a smooth user experience
+        /* Counter */
+        .pop-count { font-size: 8rem; margin: 20px 0; text-shadow: 4px 4px 0px rgba(0,0,0,0.2); }
 
-## 📦 Installation
+        /* The Buffalo - Clickable Area */
+        .buffalo-container { position: relative; cursor: pointer; user-select: none; -webkit-tap-highlight-color: transparent; }
+        .buffalo-img { width: 85%; max-width: 400px; transition: transform 0.05s; }
+        .buffalo-img:active { transform: scale(0.95); }
 
-1. Clone the repository:
-   ```sh
-   git clone https://github.com/NuxTijNhaX/memecoin-website-template.git
-   cd memecoin wesbsite-template
+        /* Bottom Status Bar */
+        .status-bar { background: rgba(255,255,255,0.2); backdrop-filter: blur(5px); padding: 15px; width: 90%; margin: 20px auto; border-radius: 20px; display: flex; justify-content: center; align-items: center; gap: 10px; font-size: 1.2rem; }
+    </style>
+</head>
+<body>
 
-2. Install dependencies:
-   ```sh
-   npm install
+    <div class="ca-header" onclick="copyCA()">
+        <div class="ca-label">CA:</div>
+        <div class="ca-value" id="caValue">8B2eFjFFWiiquE3paXppwRtnswBEE8J9dU17jPfJZvJr</div>
+    </div>
 
-3. Run the development server:
-   ```sh
-   npm run dev
+    <div class="content">
+        <img src="logo.png" class="small-icon" alt="Buff Icon">
+        
+        <div class="social-row">
+            <a href="#about" class="about-btn">ABOUT $BUFF</a>
+            <a href="https://t.me/YOUR_TELEGRAM"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" class="social-icon"></a>
+            <a href="https://x.com/YOUR_X"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" class="social-icon"></a>
+        </div>
 
-4. Open http://localhost:3000 in your browser.
+        <h1>$BUFFALO</h1>
 
-## 🎨 Customization
-- Edit content in components/ and pages/
-- Modify styles in styles/
-- Update branding assets in public/
+        <div class="pop-count" id="count">0</div>
 
-## 📤 Deployment
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+        <div class="buffalo-container" onclick="popBuffalo()">
+            <img src="logo.png" id="buffImg" class="buffalo-img" alt="Buffalo">
+        </div>
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+        <div class="status-bar">
+            <span>TOTAL POPS</span>
+            <span id="totalPops">1,240,510</span>
+            <span style="color: #00ff00;">✓</span>
+        </div>
+    </div>
 
-## ❤️ Support This Project
-consider donating to help maintain and improve it:
+    <script>
+        let clicks = 0;
+        let total = 1240510;
 
-Founders Solana Wallet Address:
+        function popBuffalo() {
+            clicks++;
+            total++;
+            document.getElementById('count').innerText = clicks;
+            document.getElementById('totalPops').innerText = total.toLocaleString();
 
-`8B2eFjFFWiiquE3paXppwRtnswBEE8J9dU17jPfJZvJr`
-Any contributions are greatly appreciated! 🙏
+            // Sound or visual effect can be added here
+            const img = document.getElementById('buffImg');
+            img.style.transform = "scale(1.1)";
+            setTimeout(() => { img.style.transform = "scale(1)"; }, 50)
+        }
+
+        function copyCA() {
+            const ca = document.getElementById('caValue').innerText;
+            navigator.clipboard.writeText(ca);
+            alert("CA Copied! 🐃🚀");
+        }
+    </script>
+
+</body>
+</html>
