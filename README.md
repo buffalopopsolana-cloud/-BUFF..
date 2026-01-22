@@ -3,180 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>$BUFF - POPBUFFALO</title>
+    <title>$BUFF - The Strongest Community</title>
     <style>
-        :root { --bg-color: #5d9e52; --text-color: #ffffff; --header-bg: #000000; }
-        body { margin: 0; padding: 0; background-color: var(--bg-color); font-family: 'Arial Black', sans-serif; text-align: center; color: var(--text-color); overflow-x: hidden; }
+        :root {
+            --bg-navy: #0f172a;
+            --accent-yellow: #facc15;
+            --accent-orange: #fb923c;
+            --card-bg: rgba(30, 41, 59, 0.5);
+            --text-gray: #94a3b8;
+        }
 
-        /* Top CA Bar - Sticky Header */
-        .ca-header { background: var(--header-bg); padding: 15px; border-radius: 0 0 40px 40px; width: 90%; margin: 0 auto; position: fixed; top: 0; left: 0; right: 0; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.3); cursor: pointer; }
-        .ca-label { font-size: 0.7rem; color: #888; margin-bottom: 5px; }
-        .ca-value { font-size: 0.8rem; word-break: break-all; color: #fff; font-family: monospace; }
+        body {
+            margin: 0; padding: 0;
+            background-color: var(--bg-navy);
+            font-family: 'Inter', sans-serif;
+            color: white;
+            display: flex; flex-direction: column; align-items: center;
+        }
 
-        /* Main Content */
-        .content { margin-top: 140px; padding: 20px; }
-        .small-icon { width: 80px; height: 80px; border-radius: 50%; border: 3px solid white; margin-bottom: 10px; object-fit: cover; }
+        /* --- HERO SECTION --- */
+        header {
+            width: 100%; max-width: 500px;
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 30px 20px;
+        }
 
-        /* Social Icons */
-        .social-row { display: flex; justify-content: center; align-items: center; gap: 15px; margin-top: 15px; }
-        .social-icon { width: 35px; height: 35px; cursor: pointer; background: white; border-radius: 8px; padding: 2px; }
-        .about-btn { background: rgba(255,255,255,0.3); padding: 12px 30px; border-radius: 30px; border: 2px solid white; color: white; text-decoration: none; font-weight: bold; }
+        .logo { color: var(--accent-yellow); font-size: 1.8rem; font-weight: 900; }
+        .buy-btn { background: var(--accent-yellow); color: black; padding: 10px 25px; border-radius: 25px; font-weight: bold; text-decoration: none; }
 
-        /* Counter */
-        .pop-count { font-size: 6rem; margin: 10px 0; text-shadow: 4px 4px 0px rgba(0,0,0,0.2); }
+        .hero { text-align: center; padding: 40px 20px; }
+        .hero h1 { font-size: 4.5rem; margin: 0; font-weight: 900; font-style: italic; line-height: 1; }
+        .hero h1 span { color: transparent; -webkit-text-stroke: 1px white; }
+        .gradient-text { background: linear-gradient(to right, var(--accent-yellow), var(--accent-orange)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        
+        .hero p { color: var(--text-gray); font-size: 1.2rem; margin: 30px 0; max-width: 400px; }
 
-        /* The Buffalo - Clickable Area */
-        .buffalo-container { position: relative; cursor: pointer; user-select: none; -webkit-tap-highlight-color: transparent; padding: 20px 0; }
-        .buffalo-img { width: 80%; max-width: 350px; transition: transform 0.05s; border-radius: 20px; border: 5px solid white; box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
-        .buffalo-img:active { transform: scale(0.92); }
+        /* --- CA BOX --- */
+        .ca-box {
+            background: var(--card-bg); border: 1px solid rgba(255,255,255,0.1);
+            padding: 20px; border-radius: 20px; width: 85%; max-width: 400px;
+            text-align: center; cursor: pointer; position: relative;
+        }
+        .ca-text { color: var(--accent-yellow); font-family: monospace; word-break: break-all; font-size: 1rem; }
 
-        /* Bottom Status Bar */
-        .status-bar { background: rgba(255,255,255,0.2); backdrop-filter: blur(5px); padding: 15px; width: 85%; max-width: 400px; margin: 20px auto; border-radius: 20px; display: flex; justify-content: space-between; align-items: center; font-size: 1.1rem; }
+        /* --- ABOUT SECTION --- */
+        .section-title { font-size: 2.5rem; font-weight: 900; margin-top: 80px; }
+        .about-text { color: white; padding: 0 25px; line-height: 1.6; max-width: 450px; text-align: center; }
+        .highlight { color: var(--accent-yellow); font-weight: bold; }
+
+        /* --- TOKENOMICS --- */
+        .token-card {
+            background: var(--card-bg); border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px; width: 85%; max-width: 400px;
+            padding: 40px 20px; margin-top: 20px; text-align: center;
+        }
+        .token-val { color: var(--accent-yellow); font-size: 2.5rem; font-weight: 900; margin: 0; }
+        .token-label { color: var(--text-gray); text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; margin-top: 10px; }
+
+        /* --- WHITEPAPER CARD --- */
+        .whitepaper-card {
+            background: linear-gradient(to bottom, var(--accent-yellow), var(--accent-orange));
+            border-radius: 20px; width: 85%; max-width: 400px;
+            padding: 40px 20px; margin: 60px 0; text-align: center; color: black;
+        }
+        .whitepaper-card h2 { font-size: 2rem; font-weight: 900; margin: 0; }
+        .whitepaper-card p { font-weight: 500; margin: 20px 0; }
+        .view-btn { background: var(--bg-navy); color: white; padding: 15px 40px; border-radius: 12px; font-weight: bold; text-decoration: none; display: inline-block; }
+
+        footer { padding-bottom: 50px; display: flex; gap: 20px; }
     </style>
 </head>
 <body>
 
-    <div class="ca-header" onclick="copyCA()">
-        <div class="ca-label">CA:</div>
-        <div class="ca-value" id="caValue">8B2eFjFFWiiquE3paXppwRtnswBEE8J9dU17jPfJZvJr</div>
-    </div>
+    <header>
+        <div class="logo">$BUFF</div>
+        <a href="#" class="buy-btn">Buy Now</a>
+    </header>
 
-    <div class="content">
-        <img src="https://github.com/BuffaloPopSolana-cloud/-BUFF../raw/main/1000112683.jpg" class="small-icon" alt="Buff Icon">
+    <div class="hero">
+        <h1>GET <span class="gradient-text">BUFF</span></h1>
+        <p>The strongest community-driven token on the chain. No taxes, no nonsense. Just gains.</p>
         
-        <div class="social-row">
-            <a href="https://t.me/buffalopop" class="about-btn">ABOUT $BUFF</a>
-            <a href="https://t.me/buffalopop"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" class="social-icon"></a>
-            <a href="https://x.com/buffalopop35321"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" class="social-icon"></a>
-        </div>
-
-        <h1>$BUFFALO</h1>
-
-        <div class="pop-count" id="count">0</div>
-
-        <div class="buffalo-container" onclick="popBuffalo()">
-            <img src="https://github.com/BuffaloPopSolana-cloud/-BUFF../raw/main/1000112683.jpg" id="buffImg" class="buffalo-img" alt="Buffalo Inferno Mascot">
-        </div>
-
-        <div class="status-bar">
-            <span>TOTAL POPS</span>
-            <span id="totalPops">1,240,510</span>
-            <span style="color: #00ff00;">✓</span>
+        <div class="ca-box" onclick="copyCA()">
+            <div class="ca-text" id="caValue">8B2eFjFFWiiquE3paXppwRtnswBEE8J9dU17jPfJZvJr</div>
         </div>
     </div>
+
+    <h2 class="section-title">About</h2>
+    <p class="about-text">
+        In a market often saturated with complexity and hidden agendas, <span class="highlight">$BUFF</span> was born from a simple realization: The true strength of a blockchain project lies in its community, not its complexity.
+    </p>
+
+    <h2 class="section-title">Tokenomics</h2>
+    
+    <div class="token-card">
+        <p class="token-val">1B</p>
+        <p class="token-label">Total Supply</p>
+    </div>
+
+    <div class="token-card">
+        <p class="token-val">0%</p>
+        <p class="token-label">Buy/Sell Tax</p>
+    </div>
+
+    <div class="token-card">
+        <p class="token-val">Burned</p>
+        <p class="token-label">Liquidity Pool</p>
+    </div>
+
+    <div class="whitepaper-card">
+        <h2>Read the Whitepaper</h2>
+        <p>Deep dive into the utility and future roadmap of $BUFF.</p>
+        <a href="#" class="view-btn">View WhitePaper</a>
+    </div>
+
+    <footer>
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" width="30"></a>
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" width="30"></a>
+    </footer>
 
     <script>
-        let clicks = 0;
-        let total = 1240510;
-
-        function popBuffalo() {
-            clicks++;
-            total++;
-            document.getElementById('count').innerText = clicks;
-            document.getElementById('totalPops').innerText = total.toLocaleString();
-
-            // Click Animation
-            const img = document.getElementById('buffImg');
-            img.style.transform = "scale(1.1)";
-            setTimeout(() => { img.style.transform = "scale(1)"; }, 50);
-        }
-
         function copyCA() {
             const ca = document.getElementById('caValue').innerText;
             navigator.clipboard.writeText(ca);
-            alert("CA Copied! Time to buy $BUFF! 🐃🔥");
-        }
-    </script>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>$BUFF - POPBUFFALO</title>
-    <style>
-        :root { --bg-color: #5d9e52; --text-color: #ffffff; --header-bg: #000000; }
-        body { margin: 0; padding: 0; background-color: var(--bg-color); font-family: 'Arial Black', sans-serif; text-align: center; color: var(--text-color); overflow-x: hidden; }
-
-        /* Top CA Bar - Sticky Header */
-        .ca-header { background: var(--header-bg); padding: 15px; border-radius: 0 0 40px 40px; width: 90%; margin: 0 auto; position: fixed; top: 0; left: 0; right: 0; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.3); cursor: pointer; }
-        .ca-label { font-size: 0.7rem; color: #888; margin-bottom: 5px; }
-        .ca-value { font-size: 0.8rem; word-break: break-all; color: #fff; font-family: monospace; }
-
-        /* Main Content */
-        .content { margin-top: 140px; padding: 20px; }
-        .small-icon { width: 80px; height: 80px; border-radius: 50%; border: 3px solid white; margin-bottom: 10px; object-fit: cover; }
-
-        /* Social Icons */
-        .social-row { display: flex; justify-content: center; align-items: center; gap: 15px; margin-top: 15px; }
-        .social-icon { width: 35px; height: 35px; cursor: pointer; background: white; border-radius: 8px; padding: 2px; }
-        .about-btn { background: rgba(255,255,255,0.3); padding: 12px 30px; border-radius: 30px; border: 2px solid white; color: white; text-decoration: none; font-weight: bold; }
-
-        /* Counter */
-        .pop-count { font-size: 6rem; margin: 10px 0; text-shadow: 4px 4px 0px rgba(0,0,0,0.2); }
-
-        /* The Buffalo - Clickable Area */
-        .buffalo-container { position: relative; cursor: pointer; user-select: none; -webkit-tap-highlight-color: transparent; padding: 20px 0; }
-        .buffalo-img { width: 80%; max-width: 350px; transition: transform 0.05s; border-radius: 20px; border: 5px solid white; box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
-        .buffalo-img:active { transform: scale(0.92); }
-
-        /* Bottom Status Bar */
-        .status-bar { background: rgba(255,255,255,0.2); backdrop-filter: blur(5px); padding: 15px; width: 85%; max-width: 400px; margin: 20px auto; border-radius: 20px; display: flex; justify-content: space-between; align-items: center; font-size: 1.1rem; }
-    </style>
-</head>
-<body>
-
-    <div class="ca-header" onclick="copyCA()">
-        <div class="ca-label">CA:</div>
-        <div class="ca-value" id="caValue">8B2eFjFFWiiquE3paXppwRtnswBEE8J9dU17jPfJZvJr</div>
-    </div>
-
-    <div class="content">
-        <img src="https://github.com/BuffaloPopSolana-cloud/-BUFF../raw/main/1000112683.jpg" class="small-icon" alt="Buff Icon">
-        
-        <div class="social-row">
-            <a href="https://t.me/buffalopop" class="about-btn">ABOUT $BUFF</a>
-            <a href="https://t.me/buffalopop"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" class="social-icon"></a>
-            <a href="https://x.com/buffalopop35321"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" class="social-icon"></a>
-        </div>
-
-        <h1>$BUFFALO</h1>
-
-        <div class="pop-count" id="count">0</div>
-
-        <div class="buffalo-container" onclick="popBuffalo()">
-            <img src="https://github.com/BuffaloPopSolana-cloud/-BUFF../raw/main/1000112683.jpg" id="buffImg" class="buffalo-img" alt="Buffalo Inferno Mascot">
-        </div>
-
-        <div class="status-bar">
-            <span>TOTAL POPS</span>
-            <span id="totalPops">1,240,510</span>
-            <span style="color: #00ff00;">✓</span>
-        </div>
-    </div>
-
-    <script>
-        let clicks = 0;
-        let total = 1240510;
-
-        function popBuffalo() {
-            clicks++;
-            total++;
-            document.getElementById('count').innerText = clicks;
-            document.getElementById('totalPops').innerText = total.toLocaleString();
-
-            // Click Animation
-            const img = document.getElementById('buffImg');
-            img.style.transform = "scale(1.1)";
-            setTimeout(() => { img.style.transform = "scale(1)"; }, 50);
-        }
-
-        function copyCA() {
-            const ca = document.getElementById('caValue').innerText;
-            navigator.clipboard.writeText(ca);
-            alert("CA Copied! Time to buy $BUFF! 🐃🔥");
+            alert("Contract Address Copied! 🐃");
         }
     </script>
 
